@@ -98,7 +98,7 @@ export const awards = [
 export const projects = [
   {
     year: "2024-2025",
-    text: "Rumor Studies / 噂の研究, painting and research series"
+    text: "四つの噂 / Four Rumors, painting, video, installation, and rumor research series"
   },
   {
     year: "2023",

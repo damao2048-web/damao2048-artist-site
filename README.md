@@ -1,6 +1,6 @@
 # Cai Dongchen / 蔡東辰 Artist Website
 
-Static Astro site for `damao2048.com`. The first version uses a quiet gallery/archive structure:
+Static Astro site for `damao2048.com`. The site uses a quiet gallery/archive structure inspired by contemporary gallery artist pages:
 
 - Home
 - Works
@@ -49,7 +49,13 @@ Images live in:
 public/images/
 ```
 
-To add a new work, place web-sized images in `public/images/works/project-name/`, then add a new object to `src/data/projects.ts`. Keep captions precise:
+The full portfolio image archive currently lives in:
+
+```text
+public/images/portfolio/full/
+```
+
+To add a new work, place web-sized images in `public/images/portfolio/full/`, then add a new object to `src/data/projects.ts`. Keep captions precise:
 
 ```text
 Title, year, medium or installation view, venue, city.

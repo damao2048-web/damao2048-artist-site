@@ -1,49 +1,82 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import I18nBlock from "../components/I18nBlock.astro";
-import ArtworkFigure from "../components/ArtworkFigure.astro";
+import { projects } from "../data/projects";
 
-const heroImage = {
-  src: "/images/works/cycle/cycle-01.jpg",
-  alt: "Cycle installation view",
-  caption: "Cycle, 2025, installation view, TURNER GALLERY, Tokyo."
-};
+const heroProject = projects[0];
+const heroImages = heroProject.images.slice(0, 8);
+const previewProjects = projects.slice(0, 6);
 ---
 
 <BaseLayout title="Home">
-  <section class="artist-top">
-    <p class="eyebrow">Artist</p>
-    <h1 class="artist-name">
+  <section class="artist-introduction">
+    <h1>
       <span>蔡東辰</span>
       <span>Cai Dongchen</span>
     </h1>
   </section>
 
-  <section class="artist-visuals" aria-label="Featured work and portrait">
-    <div class="featured-work">
-      <ArtworkFigure image={heroImage} eager />
+  <section class="hero-archive" aria-label="Selected installation views">
+    <figure class="hero-main">
+      <img
+        src={heroProject.thumbnail}
+        alt="Cycle installation view"
+        loading="eager"
+        decoding="async"
+      />
+      <figcaption>{heroProject.images[0].caption}</figcaption>
+    </figure>
+
+    <div class="hero-thumbnails" aria-label="Selected images from Cycle">
+      {heroImages.map((artwork) => (
+        <a href="/works/cycle/" aria-label={artwork.caption}>
+          <img src={artwork.src} alt="" loading="lazy" decoding="async" />
+        </a>
+      ))}
     </div>
+  </section>
+
+  <section class="home-biography" aria-label="Biography">
+    <div>
+      <h2>Biography</h2>
+      <I18nBlock
+        className="lead"
+        en="Cai Dongchen is a visual artist based in Tokyo. Working through painting, sculpture, installation, performance, and fictional archives, he explores rumors, misreadings, narrative structures, East Asian cultural friction, discarded objects, and site-based observation."
+        ja="蔡東辰は東京を拠点に活動するヴィジュアル・アーティスト。絵画、立体、インスタレーション、パフォーマンス、架空のアーカイブを通して、噂、誤読、物語構造、東アジアの文化的摩擦、不要化された物、場所に基づく観察を扱う。"
+        zh="蔡東辰现居东京。创作通过绘画、雕塑、装置、行为和虚构档案展开，研究谣言、误读、叙事结构、东亚文化摩擦、被废弃之物与基于现场的观察。"
+      />
+    </div>
+
     <figure class="portrait">
       <img
         src="/images/profile/cai-dongchen-portrait.png"
         alt="Cai Dongchen portrait drawing"
-        loading="eager"
+        loading="lazy"
         decoding="async"
       />
       <figcaption>Portrait image / personal drawing.</figcaption>
     </figure>
   </section>
 
-  <section class="home-biography" aria-label="Biography">
-    <h2>Biography</h2>
-    <div class="home-copy">
-      <p class="alias">大毛 / Visual Artist, Tokyo</p>
-      <I18nBlock
-        className="lead"
-        en="Working through painting, sculpture, installation, and fictional archives, Cai Dongchen explores rumors, misreadings, and narrative structures."
-        ja="絵画、立体、インスタレーション、架空のアーカイブを通して、噂、誤読、物語構造を探る。"
-        zh="蔡東辰通过绘画、雕塑、装置与虚构档案，研究谣言、误读与叙事结构。"
-      />
-    </div>
+  <nav class="archive-tabs home-tabs" aria-label="Artist archive">
+    <a class="is-active" href="/works/">Works</a>
+    <a href="/cv/">Exhibitions / CV</a>
+    <a href="/statement/">Statement</a>
+  </nav>
+
+  <section class="works-gallery home-preview" aria-label="Selected works">
+    {previewProjects.map((project) => (
+      <a class="work-card" href={`/works/${project.slug}/`}>
+        <figure>
+          <img src={project.thumbnail} alt="" loading="lazy" decoding="async" />
+          <figcaption>
+            <span>Cai Dongchen / 蔡東辰</span>
+            <strong>{project.title}</strong>
+            <span>{project.year}</span>
+            <span>{project.format}</span>
+          </figcaption>
+        </figure>
+      </a>
+    ))}
   </section>
 </BaseLayout>

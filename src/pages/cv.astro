@@ -1,16 +1,54 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { awards, education, exhibitions } from "../data/cv";
 ---
 
 <BaseLayout title="CV">
-  <section class="cv-download-page">
-    <p class="eyebrow">CV / 略歴 / 简历</p>
-    <h1>Curriculum Vitae</h1>
-    <p class="page-intro">
-      The full curriculum vitae is prepared as a PDF document for galleries, professors, curators, and application materials.
-    </p>
-    <a class="download-link primary-download" href="/files/cai-dongchen-cv.pdf" download>
-      Download CV PDF / CVをダウンロード / 下载CV
-    </a>
+  <section class="cv-page">
+    <div class="cv-heading">
+      <div>
+        <p class="eyebrow">CV / Exhibitions</p>
+        <h1>Curriculum Vitae</h1>
+      </div>
+      <a class="download-link" href="/files/cai-dongchen-cv.pdf" download>
+        Download CV / CVをダウンロード
+      </a>
+    </div>
+
+    <section class="cv-section">
+      <h2>Education</h2>
+      <dl>
+        {education.map((item) => (
+          <div>
+            <dt>{item.year}</dt>
+            <dd>{item.text}</dd>
+          </div>
+        ))}
+      </dl>
+    </section>
+
+    <section class="cv-section">
+      <h2>Exhibitions</h2>
+      <dl>
+        {exhibitions.map((item) => (
+          <div>
+            <dt>{item.year}</dt>
+            <dd>{item.text}</dd>
+          </div>
+        ))}
+      </dl>
+    </section>
+
+    <section class="cv-section">
+      <h2>Awards / Selected Competitions</h2>
+      <dl>
+        {awards.map((item) => (
+          <div>
+            <dt>{item.year}</dt>
+            <dd>{item.text}</dd>
+          </div>
+        ))}
+      </dl>
+    </section>
   </section>
 </BaseLayout>

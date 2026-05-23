@@ -1,0 +1,60 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ArtworkFigure from "../../components/ArtworkFigure.astro";
+import I18nBlock from "../../components/I18nBlock.astro";
+import { projects } from "../../data/projects";
+
+export function getStaticPaths() {
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: { project }
+  }));
+}
+
+const { project } = Astro.props;
+---
+
+<BaseLayout title={project.title}>
+  <article class="project-page">
+    <a class="back-link" href="/works/">All Works</a>
+
+    <header class="project-detail-header">
+      <div>
+        <p class="eyebrow">Works</p>
+        <h1>{project.title}</h1>
+        {project.titleJa && <p class="secondary-title">{project.titleJa}</p>}
+        {project.titleZh && <p class="secondary-title">{project.titleZh}</p>}
+      </div>
+
+      <dl class="project-meta">
+        <div>
+          <dt>Year</dt>
+          <dd>{project.year}</dd>
+        </div>
+        {project.venue && (
+          <div>
+            <dt>Venue</dt>
+            <dd>{project.venue}</dd>
+          </div>
+        )}
+        <div>
+          <dt>Medium</dt>
+          <dd>{project.medium}</dd>
+        </div>
+      </dl>
+    </header>
+
+    <I18nBlock
+      className="project-description"
+      en={project.description.en}
+      ja={project.description.ja}
+      zh={project.description.zh}
+    />
+
+    <section class="project-image-archive" aria-label={`${project.title} images`}>
+      {project.images.map((artwork, index) => (
+        <ArtworkFigure image={artwork} eager={index === 0} />
+      ))}
+    </section>
+  </article>
+</BaseLayout>
