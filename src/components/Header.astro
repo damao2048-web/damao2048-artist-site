@@ -1,0 +1,29 @@
+---
+import { site } from "../data/site";
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="site-header" aria-label="Site header">
+  <a class="site-title" href="/" aria-label="Cai Dongchen home">
+    <span>Cai Dongchen</span>
+    <span>蔡東辰</span>
+  </a>
+
+  <nav class="site-nav" aria-label="Main navigation">
+    {site.nav.map((item) => (
+      <a
+        href={item.href}
+        class:list={["nav-link", currentPath === item.href && "is-active"]}
+      >
+        {item.label}
+      </a>
+    ))}
+  </nav>
+
+  <div class="language-switch" aria-label="Language">
+    <button type="button" data-language-switch="ja">日本語</button>
+    <button type="button" data-language-switch="en" aria-pressed="true">EN</button>
+    <button type="button" data-language-switch="zh">中文</button>
+  </div>
+</header>

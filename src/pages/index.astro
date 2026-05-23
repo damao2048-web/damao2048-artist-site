@@ -1,0 +1,40 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import I18nBlock from "../components/I18nBlock.astro";
+import ArtworkFigure from "../components/ArtworkFigure.astro";
+
+const heroImage = {
+  src: "/images/works/cycle/cycle-01.jpg",
+  alt: "Cycle installation view",
+  caption: "Cycle, 2025, installation view, TURNER GALLERY, Tokyo."
+};
+---
+
+<BaseLayout title="Home">
+  <section class="home-intro">
+    <div class="home-copy">
+      <p class="eyebrow">Visual Artist / Tokyo</p>
+      <h1>Cai Dongchen / 蔡東辰</h1>
+      <p class="alias">大毛</p>
+      <I18nBlock
+        className="lead"
+        en="Working through painting, sculpture, installation, and fictional archives, Cai Dongchen explores rumors, misreadings, and narrative structures."
+        ja="絵画、立体、インスタレーション、架空のアーカイブを通して、噂、誤読、物語構造を探る。"
+        zh="蔡東辰通过绘画、雕塑、装置与虚构档案，研究谣言、误读与叙事结构。"
+      />
+    </div>
+    <figure class="portrait">
+      <img
+        src="/images/profile/cai-dongchen-portrait.png"
+        alt="Cai Dongchen portrait drawing"
+        loading="eager"
+        decoding="async"
+      />
+      <figcaption>Portrait image / personal drawing.</figcaption>
+    </figure>
+  </section>
+
+  <section class="featured-work" aria-label="Featured work">
+    <ArtworkFigure image={heroImage} eager />
+  </section>
+</BaseLayout>

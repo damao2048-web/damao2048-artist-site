@@ -1,0 +1,65 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { awards, education, exhibitions, projects } from "../data/cv";
+---
+
+<BaseLayout title="CV">
+  <section class="cv-page">
+    <div class="cv-heading">
+      <div>
+        <p class="eyebrow">CV / 略歴 / 简历</p>
+        <h1>Cai Dongchen / 蔡東辰</h1>
+        <p>Born in China. Based in Tokyo.</p>
+      </div>
+      <a class="download-link" href="/files/cai-dongchen-cv.pdf" download>Download CV / CVをダウンロード</a>
+    </div>
+
+    <section class="cv-section">
+      <h2>Education</h2>
+      <dl>
+        {education.map((item) => (
+          <div>
+            <dt>{item.year}</dt>
+            <dd>{item.text}</dd>
+          </div>
+        ))}
+      </dl>
+    </section>
+
+    <section class="cv-section">
+      <h2>Selected Exhibitions / Projects</h2>
+      <dl>
+        {exhibitions.map((item) => (
+          <div>
+            <dt>{item.year}</dt>
+            <dd>{item.text}</dd>
+          </div>
+        ))}
+      </dl>
+    </section>
+
+    <section class="cv-section">
+      <h2>Awards / Selected Competitions</h2>
+      <dl>
+        {awards.map((item) => (
+          <div>
+            <dt>{item.year}</dt>
+            <dd>{item.text}</dd>
+          </div>
+        ))}
+      </dl>
+    </section>
+
+    <section class="cv-section">
+      <h2>Selected Works / Research</h2>
+      <dl>
+        {projects.map((item) => (
+          <div>
+            <dt>{item.year}</dt>
+            <dd>{item.text}</dd>
+          </div>
+        ))}
+      </dl>
+    </section>
+  </section>
+</BaseLayout>

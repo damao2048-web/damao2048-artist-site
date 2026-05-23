@@ -1,0 +1,33 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { site } from "../data/site";
+---
+
+<BaseLayout title="Contact">
+  <section class="contact-page">
+    <div>
+      <p class="eyebrow">Contact / お問い合わせ / 联系</p>
+      <h1>Contact</h1>
+    </div>
+
+    <dl class="contact-list">
+      <div>
+        <dt>Email</dt>
+        <dd><a href={`mailto:${site.email}`}>{site.email}</a></dd>
+      </div>
+      <div>
+        <dt>Instagram</dt>
+        <dd><a href={`https://www.instagram.com/${site.instagram}/`}>@{site.instagram}</a></dd>
+      </div>
+      <div>
+        <dt>Location</dt>
+        <dd>{site.location}</dd>
+      </div>
+    </dl>
+
+    <figure class="contact-portrait">
+      <img src="/images/profile/cai-dongchen-portrait.png" alt="Cai Dongchen portrait drawing" />
+      <figcaption>Portrait image / personal drawing.</figcaption>
+    </figure>
+  </section>
+</BaseLayout>

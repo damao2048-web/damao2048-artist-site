@@ -1,0 +1,83 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ArtworkFigure from "../components/ArtworkFigure.astro";
+import I18nBlock from "../components/I18nBlock.astro";
+import { archiveImages, projects } from "../data/projects";
+---
+
+<BaseLayout title="Works">
+  <section class="page-heading">
+    <p class="eyebrow">Works / 作品</p>
+    <h1>Project Archive</h1>
+    <I18nBlock
+      className="page-intro"
+      en="Selected works are organized by project, with installation views, detail images, and captions kept close to the image."
+      ja="作品はプロジェクトごとに整理し、展示風景、ディテール、キャプションを画像に近い位置で記録する。"
+      zh="作品按项目归档，展览现场、局部图与 caption 保持在图像附近。"
+    />
+  </section>
+
+  <section class="project-index" aria-label="Project index">
+    {projects.map((project) => (
+      <a class="project-row" href={`#${project.slug}`}>
+        <span class="project-title">{project.title}</span>
+        <span>{project.year}</span>
+        <span>{project.format}</span>
+      </a>
+    ))}
+  </section>
+
+  <div class="project-list">
+    {projects.map((project) => (
+      <article class="project-record" id={project.slug}>
+        <header class="project-record-header">
+          <div>
+            <h2>{project.title}</h2>
+            {project.titleJa && <p class="secondary-title">{project.titleJa}</p>}
+            {project.titleZh && <p class="secondary-title">{project.titleZh}</p>}
+          </div>
+          <dl class="project-meta">
+            <div>
+              <dt>Year</dt>
+              <dd>{project.year}</dd>
+            </div>
+            {project.venue && (
+              <div>
+                <dt>Venue</dt>
+                <dd>{project.venue}</dd>
+              </div>
+            )}
+            <div>
+              <dt>Medium</dt>
+              <dd>{project.medium}</dd>
+            </div>
+          </dl>
+        </header>
+
+        <I18nBlock
+          className="project-description"
+          en={project.description.en}
+          ja={project.description.ja}
+          zh={project.description.zh}
+        />
+
+        {project.status && <p class="pending-note">{project.status}</p>}
+
+        {project.images.length > 0 && (
+          <div class="image-sequence">
+            {project.images.map((image, index) => (
+              <ArtworkFigure image={image} eager={index === 0} />
+            ))}
+          </div>
+        )}
+      </article>
+    ))}
+  </div>
+
+  <section class="archive-strip">
+    <h2>Earlier Archive</h2>
+    <div class="image-grid-small">
+      {archiveImages.map((image) => <ArtworkFigure image={image} />)}
+    </div>
+  </section>
+</BaseLayout>
