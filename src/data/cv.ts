@@ -97,14 +97,6 @@ export const awards = [
 
 export const projects = [
   {
-    year: "2026-",
-    text: "Discarded Objects / 不要化された物, ongoing site-based research project"
-  },
-  {
-    year: "2026",
-    text: "280, shaped work / object"
-  },
-  {
     year: "2024-2025",
     text: "Rumor Studies / 噂の研究, painting and research series"
   },

@@ -4,6 +4,13 @@ export type ArtworkImage = {
   caption: string;
 };
 
+export type ArchiveImage = ArtworkImage & {
+  slug: string;
+  title: string;
+  year: string;
+  medium: string;
+};
+
 export type Project = {
   slug: string;
   title: string;
@@ -127,16 +134,6 @@ export const projects: Project[] = [
         src: "/images/works/silent-ride/silent-ride-03.jpg",
         alt: "Silent Ride painting",
         caption: "Silent Ride, 2024, oil on canvas, 194 x 112 cm."
-      },
-      {
-        src: "/images/works/silent-ride/silent-ride-01.jpg",
-        alt: "Silent Ride painting and reference",
-        caption: "Silent Ride, 2024, painting / reference image."
-      },
-      {
-        src: "/images/works/silent-ride/silent-ride-02.jpg",
-        alt: "Silent Ride reference image",
-        caption: "Silent Ride, 2024, research image / reference structure."
       }
     ]
   },
@@ -176,66 +173,53 @@ export const projects: Project[] = [
         src: "/images/works/rumor-studies/rumor-04.jpg",
         alt: "Green Riverside painting and research photo",
         caption: "Green Riverside, 2024, painting and research photo."
-      },
-      {
-        src: "/images/works/rumor-studies/rumor-05.jpg",
-        alt: "Red Nectar work documentation",
-        caption: "赤い甘露 / Red Nectar, 2024, documentation."
       }
     ]
-  },
-  {
-    slug: "280",
-    title: "280",
-    year: "2026",
-    medium: "Shaped work, painting / object",
-    format: "Documentation pending",
-    status: "Documentation pending",
-    description: {
-      en: "A shaped work about hesitation, signal, and the discomfort of answering a phone in public. Images and full captions will be added after documentation is finalized.",
-      ja: "ためらい、信号、人前で電話に出ることの居心地の悪さを扱う成形作品。記録写真とキャプションは後日追加予定。",
-      zh: "关于迟疑、信号与在公共场合接电话时不适感的造型作品。正式记录照片和 caption 将在之后补充。"
-    },
-    images: []
-  },
-  {
-    slug: "discarded-objects",
-    title: "Discarded Objects / 不要化された物",
-    year: "2026-",
-    medium: "Site-based research, found objects, installation, fictional documents",
-    format: "Ongoing research project",
-    status: "Ongoing / images to be added",
-    description: {
-      en: "An ongoing project around discarded objects, informal circulation, and the narrative lives of things after they are removed from ordinary use.",
-      ja: "不要化された物、非公式な流通、日常的な使用から外れた後の物の物語を扱う継続中のプロジェクト。",
-      zh: "围绕被废弃之物、非正式流通，以及物品脱离日常用途之后所产生的叙事生命展开的长期项目。"
-    },
-    images: []
   }
 ];
 
-export const archiveImages: ArtworkImage[] = [
+export const archiveImages: ArchiveImage[] = [
   {
+    slug: "please-dont-ask-my-age",
+    title: "年齢を聞かないでください / Please Don't Ask My Age",
+    year: "2024",
+    medium: "Installation",
     src: "/images/works/archive/ask-my-age-01.jpg",
     alt: "Please Don't Ask My Age installation view",
     caption: "年齢を聞かないでください / Please Don't Ask My Age, 2024, installation view."
   },
   {
+    slug: "schedule-table-detail",
+    title: "日程表 / Schedule Table",
+    year: "2023",
+    medium: "Installation detail",
     src: "/images/works/archive/schedule-table-01.jpg",
     alt: "Schedule Table detail",
     caption: "日程表 / Schedule Table, 2023, installation detail."
   },
   {
+    slug: "schedule-table-documentation",
+    title: "日程表 / Schedule Table",
+    year: "2023",
+    medium: "Exhibition documentation",
     src: "/images/works/archive/schedule-table-02.jpg",
     alt: "Schedule Table exhibition documentation",
     caption: "日程表 / Schedule Table, 2023, exhibition documentation."
   },
   {
+    slug: "tree-action",
+    title: "木 / Tree Action",
+    year: "2022",
+    medium: "Action documentation",
     src: "/images/works/archive/tree-action-01.jpg",
     alt: "Tree Action documentation",
     caption: "木 / Tree Action, 2022, action documentation."
   },
   {
+    slug: "distillation-experiment",
+    title: "蒸留実験 / Distillation Experiment",
+    year: "2021",
+    medium: "Installation documentation",
     src: "/images/works/archive/distillation-01.jpg",
     alt: "Distillation Experiment installation",
     caption: "蒸留実験 / Distillation Experiment, 2021, installation documentation."

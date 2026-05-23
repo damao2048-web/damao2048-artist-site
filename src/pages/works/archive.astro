@@ -1,0 +1,49 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import ArtworkFigure from "../../components/ArtworkFigure.astro";
+import { archiveImages } from "../../data/projects";
+---
+
+<BaseLayout title="Earlier Archive">
+  <section class="page-heading archive-page-heading">
+    <p class="eyebrow">Archive / アーカイブ / 档案</p>
+    <h1>Earlier Archive</h1>
+    <p class="page-intro">
+      Earlier works and documentation are kept as a quiet image archive, with captions attached directly to each record.
+    </p>
+  </section>
+
+  <nav class="project-index compact-index" aria-label="Archive index">
+    {archiveImages.map((image) => (
+      <a class="project-row" href={`#${image.slug}`}>
+        <span class="project-thumb">
+          <img src={image.src} alt="" loading="lazy" decoding="async" />
+        </span>
+        <span class="project-title">{image.title}</span>
+        <span>{image.year}</span>
+        <span>{image.medium}</span>
+      </a>
+    ))}
+  </nav>
+
+  <div class="archive-sequence">
+    {archiveImages.map((image, index) => (
+      <article class="archive-record" id={image.slug}>
+        <header class="archive-record-header">
+          <h2>{image.title}</h2>
+          <dl class="project-meta">
+            <div>
+              <dt>Year</dt>
+              <dd>{image.year}</dd>
+            </div>
+            <div>
+              <dt>Medium</dt>
+              <dd>{image.medium}</dd>
+            </div>
+          </dl>
+        </header>
+        <ArtworkFigure image={image} eager={index === 0} />
+      </article>
+    ))}
+  </div>
+</BaseLayout>

@@ -11,17 +11,17 @@ const heroImage = {
 ---
 
 <BaseLayout title="Home">
-  <section class="home-intro">
-    <div class="home-copy">
-      <p class="eyebrow">Visual Artist / Tokyo</p>
-      <h1>Cai Dongchen / 蔡東辰</h1>
-      <p class="alias">大毛</p>
-      <I18nBlock
-        className="lead"
-        en="Working through painting, sculpture, installation, and fictional archives, Cai Dongchen explores rumors, misreadings, and narrative structures."
-        ja="絵画、立体、インスタレーション、架空のアーカイブを通して、噂、誤読、物語構造を探る。"
-        zh="蔡東辰通过绘画、雕塑、装置与虚构档案，研究谣言、误读与叙事结构。"
-      />
+  <section class="artist-top">
+    <p class="eyebrow">Artist</p>
+    <h1 class="artist-name">
+      <span>蔡東辰</span>
+      <span>Cai Dongchen</span>
+    </h1>
+  </section>
+
+  <section class="artist-visuals" aria-label="Featured work and portrait">
+    <div class="featured-work">
+      <ArtworkFigure image={heroImage} eager />
     </div>
     <figure class="portrait">
       <img
@@ -34,7 +34,16 @@ const heroImage = {
     </figure>
   </section>
 
-  <section class="featured-work" aria-label="Featured work">
-    <ArtworkFigure image={heroImage} eager />
+  <section class="home-biography" aria-label="Biography">
+    <h2>Biography</h2>
+    <div class="home-copy">
+      <p class="alias">大毛 / Visual Artist, Tokyo</p>
+      <I18nBlock
+        className="lead"
+        en="Working through painting, sculpture, installation, and fictional archives, Cai Dongchen explores rumors, misreadings, and narrative structures."
+        ja="絵画、立体、インスタレーション、架空のアーカイブを通して、噂、誤読、物語構造を探る。"
+        zh="蔡東辰通过绘画、雕塑、装置与虚构档案，研究谣言、误读与叙事结构。"
+      />
+    </div>
   </section>
 </BaseLayout>

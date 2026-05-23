@@ -1,12 +1,12 @@
 :root {
   color-scheme: light;
-  --paper: #f8f7f3;
+  --paper: #fbfaf7;
   --white: #ffffff;
   --ink: #111111;
-  --muted: #5f5f5f;
-  --hairline: #d9d6cf;
-  --caption: #393939;
-  --max: 1320px;
+  --muted: #5c5c5c;
+  --hairline: #ddd8ce;
+  --caption: #2f2f2f;
+  --max: 1180px;
 }
 
 * {
@@ -67,18 +67,19 @@ html[data-current-lang="zh"] [data-lang="zh"] {
   z-index: 10;
   display: grid;
   grid-template-columns: minmax(180px, 1fr) auto auto;
-  gap: 32px;
+  gap: 30px;
   align-items: center;
-  padding: 22px clamp(20px, 4vw, 56px);
+  padding: 18px clamp(18px, 4vw, 48px);
   border-bottom: 1px solid var(--hairline);
-  background: color-mix(in srgb, var(--paper) 94%, transparent);
+  background: color-mix(in srgb, var(--paper) 96%, transparent);
+  backdrop-filter: blur(6px);
 }
 
 .site-title {
   display: flex;
   gap: 10px;
   align-items: baseline;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 700;
   line-height: 1.2;
 }
@@ -111,14 +112,14 @@ html[data-current-lang="zh"] [data-lang="zh"] {
 main {
   width: min(100%, var(--max));
   margin: 0 auto;
-  padding: clamp(40px, 8vw, 104px) clamp(20px, 4vw, 56px);
+  padding: clamp(48px, 7vw, 88px) clamp(18px, 4vw, 48px);
 }
 
 .site-footer {
   display: flex;
   justify-content: space-between;
   gap: 24px;
-  padding: 28px clamp(20px, 4vw, 56px);
+  padding: 28px clamp(18px, 4vw, 48px);
   border-top: 1px solid var(--hairline);
   color: var(--muted);
   font-size: 12px;
@@ -126,25 +127,6 @@ main {
 
 .site-footer p {
   margin: 0;
-}
-
-.home-intro {
-  display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(220px, 0.52fr);
-  gap: clamp(40px, 9vw, 120px);
-  align-items: end;
-  min-height: 52vh;
-}
-
-.home-copy {
-  max-width: 760px;
-}
-
-.eyebrow {
-  margin: 0 0 24px;
-  color: var(--muted);
-  font-size: 12px;
-  letter-spacing: 0;
 }
 
 h1,
@@ -156,22 +138,23 @@ p {
 
 h1 {
   margin-bottom: 18px;
-  font-size: clamp(38px, 7vw, 94px);
+  font-size: clamp(30px, 3.4vw, 44px);
   font-weight: 700;
-  line-height: 0.98;
+  line-height: 1.08;
 }
 
 h2 {
   margin-bottom: 24px;
-  font-size: clamp(26px, 4vw, 52px);
+  font-size: clamp(21px, 2.3vw, 30px);
   font-weight: 700;
-  line-height: 1.05;
+  line-height: 1.16;
 }
 
-.alias {
-  margin-bottom: 48px;
+.eyebrow {
+  margin: 0 0 22px;
   color: var(--muted);
-  font-size: 18px;
+  font-size: 12px;
+  letter-spacing: 0;
 }
 
 .lead,
@@ -179,8 +162,32 @@ h2 {
 .project-description {
   max-width: 760px;
   color: var(--caption);
-  font-size: clamp(17px, 2vw, 24px);
-  line-height: 1.55;
+  font-size: clamp(15px, 1.3vw, 18px);
+  line-height: 1.75;
+}
+
+.artist-top {
+  margin-bottom: clamp(32px, 6vw, 72px);
+}
+
+.artist-name {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  font-size: clamp(28px, 3.4vw, 44px);
+  font-weight: 700;
+  line-height: 1.08;
+}
+
+.artist-visuals {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(180px, 260px);
+  gap: clamp(34px, 6vw, 88px);
+  align-items: end;
+}
+
+.featured-work {
+  min-width: 0;
 }
 
 .portrait,
@@ -203,8 +210,23 @@ h2 {
   line-height: 1.45;
 }
 
-.featured-work {
-  margin-top: clamp(64px, 10vw, 132px);
+.home-biography {
+  display: grid;
+  grid-template-columns: minmax(160px, 0.35fr) minmax(0, 1fr);
+  gap: clamp(34px, 7vw, 104px);
+  margin-top: clamp(64px, 10vw, 120px);
+  padding-top: 30px;
+  border-top: 1px solid var(--hairline);
+}
+
+.home-copy {
+  max-width: 760px;
+}
+
+.alias {
+  margin-bottom: 28px;
+  color: var(--muted);
+  font-size: 13px;
 }
 
 .artwork-figure {
@@ -216,23 +238,53 @@ h2 {
 }
 
 .page-heading {
-  margin-bottom: clamp(56px, 8vw, 96px);
+  margin-bottom: clamp(44px, 7vw, 76px);
+}
+
+.works-heading,
+.archive-page-heading {
+  max-width: 760px;
 }
 
 .project-index {
   display: grid;
-  margin-bottom: clamp(64px, 10vw, 128px);
+  margin-bottom: clamp(64px, 9vw, 116px);
   border-top: 1px solid var(--hairline);
 }
 
 .project-row {
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) 120px minmax(0, 1fr);
-  gap: 20px;
-  padding: 16px 0;
+  grid-template-columns: 92px minmax(0, 1.15fr) 100px minmax(0, 1fr);
+  gap: clamp(16px, 3vw, 34px);
+  align-items: center;
+  padding: 18px 0;
   border-bottom: 1px solid var(--hairline);
   color: var(--muted);
   font-size: 13px;
+}
+
+.project-row:hover {
+  text-decoration: none;
+}
+
+.project-row:hover .project-title,
+.archive-card:hover figcaption,
+.text-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.project-thumb {
+  display: block;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--white);
+}
+
+.project-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .project-title {
@@ -248,6 +300,7 @@ h2 {
 .project-record {
   border-top: 1px solid var(--ink);
   padding-top: clamp(24px, 4vw, 44px);
+  scroll-margin-top: 96px;
 }
 
 .project-record-header {
@@ -255,6 +308,10 @@ h2 {
   grid-template-columns: minmax(0, 0.95fr) minmax(280px, 0.8fr);
   gap: clamp(28px, 6vw, 96px);
   margin-bottom: 28px;
+}
+
+.project-record h2 {
+  font-size: clamp(24px, 2.8vw, 36px);
 }
 
 .secondary-title {
@@ -301,8 +358,8 @@ dd {
 
 .image-sequence {
   display: grid;
-  gap: clamp(28px, 5vw, 64px);
-  margin-top: clamp(34px, 6vw, 80px);
+  gap: clamp(32px, 5vw, 68px);
+  margin-top: clamp(34px, 6vw, 72px);
 }
 
 .image-sequence .artwork-figure:nth-child(odd) {
@@ -318,6 +375,29 @@ dd {
   margin-top: clamp(88px, 14vw, 172px);
   padding-top: 28px;
   border-top: 1px solid var(--ink);
+  scroll-margin-top: 96px;
+}
+
+.archive-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 28px;
+  align-items: flex-start;
+  margin-bottom: 28px;
+}
+
+.archive-heading h2 {
+  margin-bottom: 0;
+}
+
+.text-link {
+  flex: 0 0 auto;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.text-link::after {
+  content: " ->";
 }
 
 .image-grid-small {
@@ -326,15 +406,51 @@ dd {
   gap: clamp(22px, 4vw, 48px);
 }
 
+.archive-card {
+  display: block;
+}
+
+.archive-card:hover {
+  text-decoration: none;
+}
+
+.compact-index {
+  margin-bottom: clamp(56px, 9vw, 108px);
+}
+
+.archive-sequence {
+  display: grid;
+  gap: clamp(76px, 11vw, 140px);
+}
+
+.archive-record {
+  scroll-margin-top: 96px;
+}
+
+.archive-record-header {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(260px, 0.75fr);
+  gap: clamp(28px, 6vw, 88px);
+  margin-bottom: 24px;
+  padding-top: 26px;
+  border-top: 1px solid var(--hairline);
+}
+
+.archive-record-header h2 {
+  margin-bottom: 0;
+}
+
 .text-page,
 .cv-page,
-.contact-page {
+.contact-page,
+.cv-download-page {
   max-width: 960px;
 }
 
 .text-page h1,
 .cv-page h1,
-.contact-page h1 {
+.contact-page h1,
+.cv-download-page h1 {
   margin-bottom: 52px;
 }
 
@@ -362,6 +478,12 @@ dd {
   flex: 0 0 auto;
   padding-top: 9px;
   border-top: 1px solid var(--ink);
+}
+
+.primary-download {
+  margin-top: 36px;
+  color: var(--ink);
+  font-size: 14px;
 }
 
 .cv-section {
@@ -402,14 +524,12 @@ dd {
     padding-top: 42px;
   }
 
-  .home-intro,
+  .artist-visuals,
+  .home-biography,
   .project-record-header,
+  .archive-record-header,
   .contact-page {
     grid-template-columns: 1fr;
-  }
-
-  .home-intro {
-    min-height: auto;
   }
 
   .portrait {
@@ -417,8 +537,13 @@ dd {
   }
 
   .project-row {
-    grid-template-columns: 1fr;
-    gap: 6px;
+    grid-template-columns: 82px minmax(0, 1fr);
+    gap: 10px 16px;
+  }
+
+  .project-row > span:nth-child(3),
+  .project-row > span:nth-child(4) {
+    grid-column: 2;
   }
 
   .image-sequence .artwork-figure:nth-child(even),
@@ -429,6 +554,10 @@ dd {
 
   .image-grid-small {
     grid-template-columns: 1fr;
+  }
+
+  .archive-heading {
+    display: grid;
   }
 
   .cv-heading {
