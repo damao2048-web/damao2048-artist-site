@@ -173,6 +173,11 @@ export const projects: Project[] = [
         src: "/images/works/rumor-studies/rumor-04.jpg",
         alt: "Green Riverside painting and research photo",
         caption: "Green Riverside, 2024, painting and research photo."
+      },
+      {
+        src: "/images/works/rumor-studies/rumor-05.jpg",
+        alt: "Red Nectar work documentation",
+        caption: "赤い甘露 / Red Nectar, 2024, documentation."
       }
     ]
   }
