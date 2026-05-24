@@ -272,7 +272,7 @@ h2 {
 }
 
 .archive-page-title {
-  margin-bottom: clamp(58px, 9vw, 96px);
+  margin-bottom: clamp(34px, 5vw, 58px);
 }
 
 .archive-page-title h1 {
@@ -289,13 +289,20 @@ h2 {
   display: block;
 }
 
+.work-card figure {
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
 .work-card:hover {
   text-decoration: none;
 }
 
 .work-card img {
-  aspect-ratio: 4 / 3;
+  width: 100%;
+  height: clamp(220px, 21vw, 306px);
   object-fit: cover;
+  object-position: center;
   background: #ececea;
 }
 
@@ -538,6 +545,10 @@ dd {
   .works-gallery {
     grid-template-columns: 1fr;
     gap: 48px;
+  }
+
+  .work-card img {
+    height: min(64vw, 360px);
   }
 
   .project-image-archive .artwork-figure,

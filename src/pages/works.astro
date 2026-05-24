@@ -1,6 +1,5 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import I18nBlock from "../components/I18nBlock.astro";
 import { projects } from "../data/projects";
 ---
 
@@ -8,12 +7,6 @@ import { projects } from "../data/projects";
   <section class="archive-page-title">
     <p class="eyebrow">Works</p>
     <h1>Works</h1>
-    <I18nBlock
-      className="quiet-intro"
-      en="Projects are arranged chronologically from 2025 downward. Silent Ride is archived within Four Rumors, following the structure of the portfolio."
-      ja="作品は2025年を起点に時系列で整理する。Silent Ride はポートフォリオの構成に従い、四つの噂の中に収録する。"
-      zh="作品从 2025 年开始按时间顺序向下整理。Silent Ride 根据作品集结构归入《四つの噂》，不再单独列为项目。"
-    />
   </section>
 
   <nav class="archive-tabs" aria-label="Works sections">
