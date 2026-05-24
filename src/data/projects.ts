@@ -26,6 +26,10 @@ export type Project = {
     zh: string;
   };
   thumbnail: string;
+  details?: {
+    label: string;
+    value: string;
+  }[];
   images: ArtworkImage[];
 };
 
@@ -71,16 +75,40 @@ export const projects: Project[] = [
   },
   {
     slug: "plant-theft-case-file",
-    title: "植物盗難事件ファイル / Plant Theft Case File",
+    title: "瀬戸内アート塾 / Plant Theft Case File",
+    titleJa: "瀬戸内国際芸術祭若手芸術家育成プログラム－「令和7年度 瀬戸内アート塾」",
+    titleZh: "瀬户内艺术塾 / 植物盗难事件档案",
     year: "2025",
-    venue: "Setouchi Art School, Kagawa",
-    medium: "Project plan, site research, installation proposal, fictional archive",
-    format: "Research project / plan sheet",
+    venue: "Takamatsu Port, Teshima, Ogijima, Megijima, Naoshima, Kagawa",
+    medium: "Artist development program, site research, project plan, installation proposal, fictional archive",
+    format: "Program documentation / project plan sheet",
     thumbnail: file("p13-02"),
+    details: [
+      {
+        label: "Organizer",
+        value: "Setouchi Triennale Executive Committee"
+      },
+      {
+        label: "Planning / Operation",
+        value: "Art Front Gallery Co., Ltd.; NPO Setouchi Koebi Network"
+      },
+      {
+        label: "Lecturers",
+        value: "Fram Kitagawa, Erina Matsui, Taisuke Makihara, Motoyuki Shitamichi, Rintaro Hara"
+      },
+      {
+        label: "Role",
+        value: "Artist / participant"
+      },
+      {
+        label: "Period",
+        value: "June 20-30, 2025"
+      }
+    ],
     description: {
-      en: "A proposal for a site-based installation set in an old glass house on Seijima. The work reconstructs a fictional interrupted laboratory for a rare plant and uses files, observation logs, video, and performance to test how institutional evidence is believed.",
-      ja: "瀬居島の古いガラス小屋を舞台に、架空の希少植物研究が中断された実験室を再構成するサイトスペシフィック・インスタレーション案。",
-      zh: "以瀬居岛旧玻璃小屋为现场，构想一个关于稀有植物克隆研究中断事件的虚构实验室，通过档案、录像和表演制造可信证据。"
+      en: "This entry records Cai Dongchen's participation in the Setouchi Triennale young artist development program, where lectures, fieldwork, observation, and project planning were developed across several islands in Kagawa. The project plan, Plant Theft Case File, proposes a site-based installation in an old glass house on Seijima, reconstructing a fictional interrupted laboratory for a rare plant through files, observation logs, video, and performance.",
+      ja: "瀬戸内国際芸術祭若手芸術家育成プログラム「令和7年度 瀬戸内アート塾」への参加記録。講義、地域フィールドワーク、観察、発見を作品構想へ接続するプログラムとして、高松港、豊島、男木島、女木島、直島で実施された。作品プラン《植物盗難事件ファイル》では、瀬居島の古いガラス小屋を舞台に、架空の希少植物研究が中断された実験室を再構成するサイトスペシフィック・インスタレーションを構想した。",
+      zh: "本条目记录蔡東辰参加瀬户内国际艺术祭青年艺术家育成项目「令和7年度 瀬戸内アート塾」的经历。项目通过讲座、地域田野调查、观察与方案构思，将现场经验推进为作品计划。《植物盗難事件ファイル》以瀬居岛旧玻璃小屋为现场，构想一个关于稀有植物研究中断事件的虚构实验室。"
     },
     images: [
       image("p13-02", "Rare plant research sheet", "植物盗難事件ファイル / Plant Theft Case File, 2025, research sheet."),

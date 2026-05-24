@@ -41,6 +41,12 @@ const { project } = Astro.props;
           <dt>Medium</dt>
           <dd>{project.medium}</dd>
         </div>
+        {project.details?.map((detail) => (
+          <div>
+            <dt>{detail.label}</dt>
+            <dd>{detail.value}</dd>
+          </div>
+        ))}
       </dl>
     </header>
 
