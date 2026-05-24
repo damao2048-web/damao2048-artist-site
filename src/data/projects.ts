@@ -150,7 +150,7 @@ export const projects: Project[] = [
     venue: "Nihon University College of Art A&D Gallery, Tokyo",
     medium: "Painting, video, installation, research images, fictional texts",
     format: "Graduation exhibition / rumor research series",
-    thumbnail: file("p21-01"),
+    thumbnail: "/images/portfolio/full/four-rumors-cover.jpg",
     description: {
       en: "A group of four works that examine rumor as a narrative device. Silent Ride belongs to this project and is shown here together with Binbo, Green Riverside, and Red Nectar rather than as a separate project.",
       ja: "噂を物語装置として扱う四点のシリーズ。Silent Ride は本プロジェクトに含まれるため、貧乏、Green Riverside、赤い甘露とともに記録する。",
