@@ -1,75 +1,32 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { projects } from "../data/projects";
+import { site } from "../data/site";
 
-const heroProject = projects[0];
-const heroImages = heroProject.images.slice(0, 8);
-const previewProjects = projects.slice(0, 6);
+const archiveLinks = site.nav.filter((item) => item.href !== "/");
 ---
 
-<BaseLayout title="Home">
-  <section class="artist-introduction">
-    <h1>Cai Dongchen</h1>
-  </section>
-
-  <section class="hero-archive" aria-label="Selected installation views">
-    <figure class="hero-main">
-      <img
-        src={heroProject.thumbnail}
-        alt="Cycle installation view"
-        loading="eager"
-        decoding="async"
-      />
-      <figcaption>{heroProject.images[0].caption}</figcaption>
-    </figure>
-
-    <div class="hero-thumbnails" aria-label="Selected images from Cycle">
-      {heroImages.map((artwork) => (
-        <a href="/works/cycle/" aria-label={artwork.caption}>
-          <img src={artwork.src} alt="" loading="lazy" decoding="async" />
-        </a>
-      ))}
-    </div>
-  </section>
-
-  <section class="home-biography" aria-label="Biography">
-    <div>
-      <h2>Biography</h2>
-      <p class="lead">
-        Cai Dongchen is a visual artist based in Tokyo. Working through painting, sculpture, installation, performance, and fictional archives, he explores rumors, misreadings, narrative structures, East Asian cultural friction, discarded objects, and site-based observation.
+<BaseLayout title="Home" description={site.description}>
+  <section class="home-index" aria-label="Artist index">
+    <div class="home-index-primary">
+      <h1>Cai Dongchen</h1>
+      <p class="home-subtitle">Visual artist based in Tokyo</p>
+      <p class="home-statement">
+        Working through painting, sculpture, installation, performance, and fictional archives, Cai Dongchen explores rumors, misreadings, and narrative structures.
       </p>
     </div>
 
-    <figure class="portrait">
-      <img
-        src="/images/profile/cai-dongchen-portrait.png"
-        alt="Cai Dongchen portrait drawing"
-        loading="lazy"
-        decoding="async"
-      />
-      <figcaption>Portrait image / personal drawing.</figcaption>
-    </figure>
-  </section>
-
-  <nav class="archive-tabs home-tabs" aria-label="Artist archive">
-    <a class="is-active" href="/works/">Works</a>
-    <a href="/cv/">Exhibitions / CV</a>
-    <a href="/statement/">Statement</a>
-  </nav>
-
-  <section class="works-gallery home-preview" aria-label="Selected works">
-    {previewProjects.map((project) => (
-      <a class="work-card" href={`/works/${project.slug}/`}>
-        <figure>
-          <img src={project.thumbnail} alt="" loading="lazy" decoding="async" />
-          <figcaption>
-            <span>Cai Dongchen</span>
-            <strong>{project.title}</strong>
-            <span>{project.year}</span>
-            <span>{project.format}</span>
-          </figcaption>
-        </figure>
-      </a>
-    ))}
+    <nav class="home-index-nav" aria-label="Artist archive">
+      {archiveLinks.map((item) => (
+        <a href={item.href}>
+          <span>{item.label}</span>
+          <small>
+            {item.label === "Works" && "Archive of projects and documentation"}
+            {item.label === "Statement" && "Artist statement"}
+            {item.label === "CV" && "Exhibitions, education, and selected activities"}
+            {item.label === "Contact" && "Email, Instagram, and location"}
+          </small>
+        </a>
+      ))}
+    </nav>
   </section>
 </BaseLayout>
