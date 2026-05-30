@@ -49,7 +49,10 @@ const { project } = Astro.props;
 
     <p class="project-description">{project.description}</p>
 
-    <section class="project-image-archive" aria-label={`${project.title} images`}>
+    <section
+      class:list={["project-image-archive", project.imageFit === "contain" && "is-contain"]}
+      aria-label={`${project.title} images`}
+    >
       {project.images.map((artwork, index) => (
         <ArtworkFigure image={artwork} eager={index === 0} />
       ))}
