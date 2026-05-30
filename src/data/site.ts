@@ -1,7 +1,7 @@
 export const site = {
-  name: "Cai Dongchen / 蔡東辰",
+  name: "Cai Dongchen",
   aliases: "",
-  title: "Cai Dongchen / 蔡東辰",
+  title: "Cai Dongchen",
   domain: "https://damao2048.com",
   email: "damao2048@gmail.com",
   instagram: "caidongchen_",

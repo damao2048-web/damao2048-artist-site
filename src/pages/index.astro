@@ -1,6 +1,5 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import I18nBlock from "../components/I18nBlock.astro";
 import { projects } from "../data/projects";
 
 const heroProject = projects[0];
@@ -10,10 +9,7 @@ const previewProjects = projects.slice(0, 6);
 
 <BaseLayout title="Home">
   <section class="artist-introduction">
-    <h1>
-      <span>蔡東辰</span>
-      <span>Cai Dongchen</span>
-    </h1>
+    <h1>Cai Dongchen</h1>
   </section>
 
   <section class="hero-archive" aria-label="Selected installation views">
@@ -39,12 +35,9 @@ const previewProjects = projects.slice(0, 6);
   <section class="home-biography" aria-label="Biography">
     <div>
       <h2>Biography</h2>
-      <I18nBlock
-        className="lead"
-        en="Cai Dongchen is a visual artist based in Tokyo. Working through painting, sculpture, installation, performance, and fictional archives, he explores rumors, misreadings, narrative structures, East Asian cultural friction, discarded objects, and site-based observation."
-        ja="蔡東辰は東京を拠点に活動するヴィジュアル・アーティスト。絵画、立体、インスタレーション、パフォーマンス、架空のアーカイブを通して、噂、誤読、物語構造、東アジアの文化的摩擦、不要化された物、場所に基づく観察を扱う。"
-        zh="蔡東辰现居东京。创作通过绘画、雕塑、装置、行为和虚构档案展开，研究谣言、误读、叙事结构、东亚文化摩擦、被废弃之物与基于现场的观察。"
-      />
+      <p class="lead">
+        Cai Dongchen is a visual artist based in Tokyo. Working through painting, sculpture, installation, performance, and fictional archives, he explores rumors, misreadings, narrative structures, East Asian cultural friction, discarded objects, and site-based observation.
+      </p>
     </div>
 
     <figure class="portrait">
@@ -70,7 +63,7 @@ const previewProjects = projects.slice(0, 6);
         <figure>
           <img src={project.thumbnail} alt="" loading="lazy" decoding="async" />
           <figcaption>
-            <span>Cai Dongchen / 蔡東辰</span>
+            <span>Cai Dongchen</span>
             <strong>{project.title}</strong>
             <span>{project.year}</span>
             <span>{project.format}</span>

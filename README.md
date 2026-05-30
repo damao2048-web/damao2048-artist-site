@@ -1,4 +1,4 @@
-# Cai Dongchen / 蔡東辰 Artist Website
+# Cai Dongchen Artist Website
 
 Static Astro site for `damao2048.com`. The site uses a quiet gallery/archive structure inspired by contemporary gallery artist pages:
 

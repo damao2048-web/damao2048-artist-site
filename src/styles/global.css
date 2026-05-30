@@ -51,22 +51,12 @@ img {
   height: auto;
 }
 
-[data-lang] {
-  display: none;
-}
-
-html[data-current-lang="en"] [data-lang="en"],
-html[data-current-lang="ja"] [data-lang="ja"],
-html[data-current-lang="zh"] [data-lang="zh"] {
-  display: block;
-}
-
 .site-header {
   position: sticky;
   top: 0;
   z-index: 20;
   display: grid;
-  grid-template-columns: minmax(180px, 1fr) auto auto;
+  grid-template-columns: minmax(180px, 1fr) auto;
   gap: 42px;
   align-items: center;
   min-height: 70px;
@@ -85,8 +75,7 @@ html[data-current-lang="zh"] [data-lang="zh"] {
   line-height: 1.2;
 }
 
-.site-nav,
-.language-switch {
+.site-nav {
   display: flex;
   flex-wrap: wrap;
   gap: 18px;
@@ -94,7 +83,6 @@ html[data-current-lang="zh"] [data-lang="zh"] {
 }
 
 .nav-link,
-.language-switch button,
 .download-link {
   border: 0;
   padding: 0;
@@ -105,8 +93,7 @@ html[data-current-lang="zh"] [data-lang="zh"] {
   line-height: 1.4;
 }
 
-.nav-link.is-active,
-.language-switch button[aria-pressed="true"] {
+.nav-link.is-active {
   color: var(--ink);
 }
 
@@ -157,17 +144,8 @@ h2 {
 }
 
 .artist-introduction h1 {
-  display: grid;
-  gap: 14px;
   font-size: clamp(26px, 3vw, 34px);
   font-weight: 400;
-}
-
-.artist-introduction h1 span + span {
-  color: var(--soft-ink);
-  font-size: clamp(15px, 1.4vw, 18px);
-  font-weight: 400;
-  letter-spacing: 0.04em;
 }
 
 .hero-archive {
@@ -518,8 +496,7 @@ dd {
     font-size: 15px;
   }
 
-  .site-nav,
-  .language-switch {
+  .site-nav {
     gap: 14px;
   }
 
