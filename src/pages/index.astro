@@ -5,7 +5,7 @@ import { site } from "../data/site";
 const archiveLinks = site.nav.filter((item) => item.href !== "/");
 ---
 
-<BaseLayout title="Home" description={site.description}>
+<BaseLayout title="Home" description={site.description} hideHeader>
   <section class="home-index" aria-label="Artist index">
     <div class="home-index-primary">
       <h1>Cai Dongchen</h1>
