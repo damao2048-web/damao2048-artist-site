@@ -29,23 +29,12 @@ export type Project = {
 };
 
 const file = (name: string) => `/images/portfolio/full/${name}.jpg`;
-const paintingFile = (name: string) => `/images/works/paintings-2022-2025/${name}.jpg`;
 
 const image = (name: string, alt: string, caption: string): ArtworkImage => ({
   src: file(name),
   alt,
   caption
 });
-
-const paintingImage = (name: string, number: number): ArtworkImage => {
-  const index = String(number).padStart(2, "0");
-
-  return {
-    src: paintingFile(name),
-    alt: `Selected painting ${index}`,
-    caption: `Selected painting ${index}, 2022-2025, painting documentation.`
-  };
-};
 
 export const projects: Project[] = [
   {
@@ -161,40 +150,6 @@ export const projects: Project[] = [
       image("p28-01", "Red Nectar installation detail", "Red Nectar, 2024, installation detail."),
       image("p29-01", "Red Nectar exhibition documentation", "Red Nectar, 2024, acrylic, clay, 18 x 194 cm."),
       image("p29-02", "Red Nectar object photograph", "Red Nectar, 2024, object photograph.")
-    ]
-  },
-  {
-    slug: "paintings-2022-2025",
-    title: "Paintings, 2022-2025",
-    year: "2022-2025",
-    medium: "Painting, acrylic and oil on canvas / paper",
-    format: "Selected painting archive",
-    thumbnail: paintingFile("painting-07"),
-    imageFit: "contain",
-    description:
-      "A selected archive of paintings made between 2022 and 2025. The images are cropped to the artwork surface so the record reads as a painting archive rather than exhibition documentation.",
-    images: [
-      paintingImage("painting-01", 1),
-      paintingImage("painting-02", 2),
-      paintingImage("painting-03", 3),
-      paintingImage("painting-04", 4),
-      paintingImage("painting-05", 5),
-      paintingImage("painting-06", 6),
-      paintingImage("painting-07", 7),
-      paintingImage("painting-08", 8),
-      paintingImage("painting-09", 9),
-      paintingImage("painting-10", 10),
-      paintingImage("painting-11", 11),
-      paintingImage("painting-12", 12),
-      paintingImage("painting-13", 13),
-      paintingImage("painting-14", 14),
-      paintingImage("painting-15", 15),
-      paintingImage("painting-16", 16),
-      paintingImage("painting-17", 17),
-      paintingImage("painting-18", 18),
-      paintingImage("painting-19", 19),
-      paintingImage("painting-20", 20),
-      paintingImage("painting-21", 21)
     ]
   },
   {
