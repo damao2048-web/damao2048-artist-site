@@ -9,12 +9,6 @@ import { projects } from "../data/projects";
     <h1>Works</h1>
   </section>
 
-  <nav class="archive-tabs" aria-label="Works sections">
-    <a class="is-active" href="/works/">Works</a>
-    <a href="/cv/">Exhibitions / CV</a>
-    <a href="/statement/">Statement</a>
-  </nav>
-
   <section class="works-gallery" aria-label="Project archive">
     {projects.map((project) => (
       <a class="work-card" href={`/works/${project.slug}/`}>
