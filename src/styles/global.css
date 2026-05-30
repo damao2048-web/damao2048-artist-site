@@ -293,27 +293,6 @@ h2 {
   background: var(--panel);
 }
 
-.archive-tabs {
-  display: flex;
-  gap: clamp(30px, 7vw, 92px);
-  margin: 0 0 clamp(64px, 9vw, 94px);
-  padding-top: 32px;
-  border-top: 1px solid var(--line);
-}
-
-.archive-tabs a {
-  color: var(--muted);
-  font-size: 14px;
-}
-
-.archive-tabs a.is-active {
-  color: var(--ink);
-}
-
-.home-tabs {
-  margin-top: clamp(58px, 9vw, 110px);
-}
-
 .archive-page-title {
   margin-bottom: clamp(34px, 5vw, 58px);
 }
@@ -618,11 +597,6 @@ dd {
 
   .project-image-archive img {
     height: min(68vw, 380px);
-  }
-
-  .archive-tabs {
-    flex-wrap: wrap;
-    gap: 18px 28px;
   }
 
   .cv-heading {
