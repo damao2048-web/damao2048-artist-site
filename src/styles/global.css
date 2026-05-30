@@ -431,6 +431,12 @@ dd {
   object-position: center;
 }
 
+.project-image-archive.is-contain img {
+  aspect-ratio: 4 / 3;
+  height: auto;
+  object-fit: contain;
+}
+
 .text-page,
 .cv-page,
 .contact-page,
@@ -597,6 +603,10 @@ dd {
 
   .project-image-archive img {
     height: min(68vw, 380px);
+  }
+
+  .project-image-archive.is-contain img {
+    height: auto;
   }
 
   .cv-heading {
