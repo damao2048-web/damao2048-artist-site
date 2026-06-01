@@ -172,8 +172,6 @@ h2 {
 
 .home-statement {
   max-width: 760px;
-  padding-top: 38px;
-  border-top: 1px solid var(--line);
   color: var(--soft-ink);
   font-size: clamp(16px, 1.55vw, 18px);
   line-height: 1.85;
@@ -181,15 +179,13 @@ h2 {
 
 .home-index-nav {
   display: grid;
-  gap: 0;
-  border-top: 1px solid var(--line);
+  gap: 30px;
 }
 
 .home-index-nav a {
   display: grid;
   gap: 10px;
-  padding: 24px 0;
-  border-bottom: 1px solid var(--line);
+  padding: 0;
 }
 
 .home-index-nav a:hover {
@@ -203,8 +199,7 @@ h2 {
 }
 
 .home-index-nav a:hover span {
-  text-decoration: underline;
-  text-underline-offset: 0.18em;
+  color: var(--soft-ink);
 }
 
 .home-index-nav small {
