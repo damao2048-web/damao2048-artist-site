@@ -626,3 +626,20 @@ dd {
     display: grid;
   }
 }
+.download-link,
+.cv-section,
+.contact-list,
+.contact-list div,
+.cv-section dl div {
+  border-top: 0;
+  border-bottom: 0;
+}
+
+.download-link {
+  padding-top: 0;
+}
+
+.contact-list {
+  display: grid;
+  gap: 16px;
+}
