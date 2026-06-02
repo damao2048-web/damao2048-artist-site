@@ -1,0 +1,75 @@
+<dialog class="image-lightbox" id="image-lightbox" aria-label="Image viewer">
+  <div class="image-lightbox__surface">
+    <button class="image-lightbox__close" type="button" aria-label="Close image viewer">Close</button>
+    <button class="image-lightbox__nav image-lightbox__nav--prev" type="button" aria-label="Previous image">&lsaquo;</button>
+    <figure class="image-lightbox__figure">
+      <img class="image-lightbox__image" src="" alt="" />
+      <figcaption class="image-lightbox__caption"></figcaption>
+    </figure>
+    <button class="image-lightbox__nav image-lightbox__nav--next" type="button" aria-label="Next image">&rsaquo;</button>
+  </div>
+</dialog>
+
+<script>
+  const lightbox = document.getElementById("image-lightbox") as HTMLDialogElement | null;
+  const lightboxImage = lightbox?.querySelector<HTMLImageElement>(".image-lightbox__image");
+  const lightboxCaption = lightbox?.querySelector<HTMLElement>(".image-lightbox__caption");
+  const closeButton = lightbox?.querySelector<HTMLButtonElement>(".image-lightbox__close");
+  const previousButton = lightbox?.querySelector<HTMLButtonElement>(".image-lightbox__nav--prev");
+  const nextButton = lightbox?.querySelector<HTMLButtonElement>(".image-lightbox__nav--next");
+  const triggers = Array.from(document.querySelectorAll<HTMLButtonElement>(".artwork-image-button"));
+  let activeIndex = 0;
+
+  const updateLightbox = (index: number) => {
+    if (!lightboxImage || !lightboxCaption || triggers.length === 0) return;
+    activeIndex = (index + triggers.length) % triggers.length;
+    const trigger = triggers[activeIndex];
+    lightboxImage.setAttribute("src", trigger.dataset.lightboxSrc || "");
+    lightboxImage.setAttribute("alt", trigger.dataset.lightboxAlt || "");
+    lightboxCaption.textContent = trigger.dataset.lightboxCaption || "";
+  };
+
+  const openLightbox = (index: number) => {
+    if (!lightbox) return;
+    updateLightbox(index);
+    if (typeof lightbox.showModal === "function") {
+      lightbox.showModal();
+    } else {
+      lightbox.setAttribute("open", "");
+    }
+    document.documentElement.classList.add("has-open-lightbox");
+  };
+
+  const closeLightbox = () => {
+    if (!lightbox) return;
+    if (typeof lightbox.close === "function") {
+      lightbox.close();
+    } else {
+      lightbox.removeAttribute("open");
+    }
+    document.documentElement.classList.remove("has-open-lightbox");
+  };
+
+  triggers.forEach((trigger, index) => {
+    trigger.addEventListener("click", () => openLightbox(index));
+  });
+
+  previousButton?.addEventListener("click", () => updateLightbox(activeIndex - 1));
+  nextButton?.addEventListener("click", () => updateLightbox(activeIndex + 1));
+  closeButton?.addEventListener("click", closeLightbox);
+
+  lightbox?.addEventListener("click", (event) => {
+    if (event.target === lightbox) closeLightbox();
+  });
+
+  lightbox?.addEventListener("close", () => {
+    document.documentElement.classList.remove("has-open-lightbox");
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (!lightbox?.hasAttribute("open")) return;
+    if (event.key === "ArrowLeft") updateLightbox(activeIndex - 1);
+    if (event.key === "ArrowRight") updateLightbox(activeIndex + 1);
+    if (event.key === "Escape") closeLightbox();
+  });
+</script>
