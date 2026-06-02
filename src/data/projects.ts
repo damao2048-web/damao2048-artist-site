@@ -159,29 +159,17 @@ export const projects: Project[] = [
     venue: "ChangTing Gallery, Tokyo",
     medium: "Installation, handmade toys, readymade objects, painting, mixed media",
     format: "Two-person exhibition / installation record",
-    thumbnail: file("p31-01"),
+    thumbnail: file("ask-age-cover"),
     description:
       "An exhibition environment built around the question of age, play, and the social framing of toys. The project gathers handmade objects, found materials, and interactive structures into a temporary play archive.",
     images: [
-      image("p30-01", "Please Don't Ask My Age installation view", "Please Don't Ask My Age, 2024, installation view, ChangTing Gallery, Tokyo."),
-      image("p31-01", "Please Don't Ask My Age installation view", "Please Don't Ask My Age, 2024, installation view, ChangTing Gallery, Tokyo."),
-      image("p31-02", "Please Don't Ask My Age installation view", "Please Don't Ask My Age, 2024, installation view, ChangTing Gallery, Tokyo."),
-      image("p32-01", "Yamanote Line installation", "Yamanote Line, 2024, installation / board-game structure."),
-      image("p33-01", "Yamanote Line detail", "Yamanote Line, 2024, installation detail."),
-      image("p33-02", "Yamanote Line detail", "Yamanote Line, 2024, installation detail."),
-      image("p34-01", "Toy shelf installation", "Please Don't Ask My Age, 2024, toy shelf / installation detail."),
-      image("p34-02", "Handmade toy object", "Please Don't Ask My Age, 2024, handmade toy object."),
-      image("p35-01", "Handmade toy object", "Please Don't Ask My Age, 2024, handmade toy object."),
-      image("p35-02", "Handmade toy object", "Please Don't Ask My Age, 2024, handmade toy object."),
-      image("p35-03", "Handmade toy object", "Please Don't Ask My Age, 2024, handmade toy object."),
-      image("p35-04", "Handmade toy object", "Please Don't Ask My Age, 2024, handmade toy object."),
-      image("p35-05", "Handmade toy object", "Please Don't Ask My Age, 2024, handmade toy object."),
-      image("p35-06", "Handmade toy object", "Please Don't Ask My Age, 2024, handmade toy object."),
-      image("p35-07", "Handmade toy object", "Please Don't Ask My Age, 2024, handmade toy object."),
-      image("p35-08", "Handmade toy object", "Please Don't Ask My Age, 2024, handmade toy object."),
-      image("p36-01", "Bowing installation", "Bowing, 2024, acrylic, music stands."),
-      image("p37-01", "Bowing installation view", "Bowing, 2024, installation view."),
-      image("p37-02", "Bowing installation view", "Bowing, 2024, installation view.")
+      image("ask-age-01", "Yamanote Line installation detail", "Yamanote Line, 2024, installation detail, ChangTing Gallery, Tokyo."),
+      image("ask-age-02", "Yamanote Line installation detail", "Yamanote Line, 2024, installation detail, ChangTing Gallery, Tokyo."),
+      image("ask-age-03", "Please Don't Ask My Age installation detail", "Please Don't Ask My Age, 2024, installation detail, ChangTing Gallery, Tokyo."),
+      image("ask-age-04", "Please Don't Ask My Age installation detail", "Please Don't Ask My Age, 2024, installation detail, ChangTing Gallery, Tokyo."),
+      image("ask-age-05", "Please Don't Ask My Age painting detail", "Please Don't Ask My Age, 2024, painting detail, ChangTing Gallery, Tokyo."),
+      image("ask-age-06", "Please Don't Ask My Age painting detail", "Please Don't Ask My Age, 2024, painting detail, ChangTing Gallery, Tokyo."),
+      image("ask-age-07", "Please Don't Ask My Age installation detail", "Please Don't Ask My Age, 2024, installation detail, ChangTing Gallery, Tokyo.")
     ]
   },
   {
