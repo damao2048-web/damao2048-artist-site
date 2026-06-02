@@ -1,7 +1,9 @@
 ---
 import "../styles/global.css";
+import "../styles/lightbox.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import ImageLightbox from "../components/ImageLightbox.astro";
 import { site } from "../data/site";
 
 type Props = {
@@ -39,6 +41,7 @@ const ogImage = `${site.domain}/images/portfolio/full/p03-01.jpg`;
     <main id="main-content">
       <slot />
     </main>
+    <ImageLightbox />
     <Footer />
   </body>
 </html>
