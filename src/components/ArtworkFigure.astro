@@ -10,11 +10,20 @@ const { image, eager = false } = Astro.props;
 ---
 
 <figure class="artwork-figure">
-  <img
-    src={image.src}
-    alt={image.alt}
-    loading={eager ? "eager" : "lazy"}
-    decoding="async"
-  />
+  <button
+    class="artwork-image-button"
+    type="button"
+    data-lightbox-src={image.src}
+    data-lightbox-alt={image.alt}
+    data-lightbox-caption={image.caption}
+    aria-label={`View image: ${image.caption}`}
+  >
+    <img
+      src={image.src}
+      alt={image.alt}
+      loading={eager ? "eager" : "lazy"}
+      decoding="async"
+    />
+  </button>
   <figcaption>{image.caption}</figcaption>
 </figure>
