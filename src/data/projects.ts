@@ -1,3 +1,5 @@
+import { smallWorksProject } from "./smallWorks";
+
 export type ArtworkImage = {
   src: string;
   alt: string;
@@ -37,6 +39,7 @@ const image = (name: string, alt: string, caption: string): ArtworkImage => ({
 });
 
 export const projects: Project[] = [
+  smallWorksProject,
   {
     slug: "cycle",
     title: "Cycle",
